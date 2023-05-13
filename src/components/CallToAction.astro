@@ -1,12 +1,13 @@
 ---
 interface Props {
 	href: string;
+	target?: string;
 }
 
-const { href } = Astro.props;
+const { href, target } = Astro.props;
 ---
 
-<a href={href}><slot /></a>
+<a href={href} target={target != null ? target : "_self"}><slot /></a>
 
 <style>
 	a {
@@ -23,7 +24,12 @@ const { href } = Astro.props;
 		overflow: hidden;
 		background: var(--gradient-accent-orange);
 		box-shadow: var(--shadow-md);
+		transition: scale var(--theme-transition);
 		white-space: nowrap;
+	}
+
+	a:active {
+		scale: 0.95;
 	}
 
 	@media (min-width: 20em) {

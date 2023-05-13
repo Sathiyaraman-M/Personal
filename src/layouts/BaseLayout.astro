@@ -3,6 +3,7 @@ import MainHead from '../components/MainHead.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 
+
 interface Props {
 	title?: string | undefined;
 	description?: string | undefined;
@@ -55,7 +56,7 @@ const { title, description } = Astro.props;
 			:root.loaded {
 				--bg-image-subtle-1: url('/assets/backgrounds/bg-subtle-1-light-800w.jpg');
 				--bg-image-subtle-2: url('/assets/backgrounds/bg-subtle-2-light-800w.jpg');
-				--bg-image-footer: url('/assets/backgrounds/bg-footer-light-800w.jpg');
+				--bg-image-footer: url('/assets/backgrounkds/bg-footer-light-800w.jpg');
 			}
 			:root.loaded.theme-dark {
 				--bg-image-subtle-1: url('/assets/backgrounds/bg-subtle-1-dark-800w.jpg');

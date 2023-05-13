@@ -5,7 +5,8 @@ import ThemeToggle from './ThemeToggle.astro';
 /** Main menu items */
 const textLinks: { label: string; href: string }[] = [
 	{ label: 'Home', href: '/' },
-	{ label: 'Works', href: '/works/' },
+	{ label: 'Projects', href: '/projects/' },
+	{ label: 'Expertise', href: '/expertise/' },
 	{ label: 'About', href: '/about/' },
 ];
 
@@ -13,6 +14,7 @@ const textLinks: { label: string; href: string }[] = [
 const iconLinks: { label: string; href: string; icon: IconProps['icon'] }[] = [
 	{ label: 'Twitter', href: 'https://twitter.com/SathiyaramanM', icon: 'twitter-logo' },
 	{ label: 'GitHub', href: 'https://github.com/SathiyaramanM', icon: 'github-logo' },
+	{ label: 'YouTube', href: 'https://linkedin.com/in/sathiyaraman-m', icon: 'linkedin-logo' },
 	{ label: 'YouTube', href: 'https://www.youtube.com/@sathiyaraman-m', icon: 'youtube-logo' },
 ];
 ---
@@ -21,7 +23,7 @@ const iconLinks: { label: string; href: string; icon: IconProps['icon'] }[] = [
 	<div class="menu-header">
 		<a href="/" class="site-title">
 			<Icon icon="terminal-window" color="var(--accent-regular)" size="1.6em" gradient />
-			Jeanine White
+			Sathiyaraman M
 		</a>
 		<menu-button>
 			<template>
@@ -259,6 +261,7 @@ const iconLinks: { label: string; href: string; icon: IconProps['icon'] }[] = [
 			flex-direction: row;
 			font-size: var(--text-sm);
 			border-radius: 999rem;
+			text-transform: uppercase;
 			border: 0;
 			padding: 0.5rem 0.5625rem;
 			background: radial-gradient(var(--gray-900), var(--gray-800) 150%);

@@ -3,9 +3,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 import ContactCTA from '../components/ContactCTA.astro';
 import Hero from '../components/Hero.astro';
+import CallToAction from '../components/CallToAction.astro';
 ---
 
-<BaseLayout title="About | Jeanine White" description="About Jeanine White Lorem Ipsum">
+<BaseLayout title="About | Sathiyaraman M" description="About Sathiyaraman M">
 	<div class="stack gap-20">
 		<main class="wrapper about">
 			<Hero
@@ -16,43 +17,49 @@ import Hero from '../components/Hero.astro';
 					width="1553"
 					height="873"
 					src="/assets/at-work.jpg"
-					alt="Jeanine White at work with a colleague"
+					alt="Sathiyaraman M & Team at SIH 2022"
 				/>
+				<span>Participated in Grand Finale of Smart India Hackathon 2022, organized by Ministry of Education, Govt. of India.</span>
 			</Hero>
 
 			<section>
 				<h2 class="section-title">Background</h2>
 				<div class="content">
 					<p>
-						Lorem ipsum dolor sit amet, <a href="https://astro.build/">Astro</a> makes people happy.
-						Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Proin nibh nisl condimentum
-						id venenatis a condimentum vitae. Dapibus ultrices in iaculis nunc. Arcu odio ut sem nulla
-						pharetra diam sit amet. Diam quis enim lobortis scelerisque fermentum dui faucibus in ornare.
+						As a motivated and ambitious student, I have a strong interest in web development and a passion for learning. I have been exploring the field of web development on my own, gaining knowledge and experience in a variety of technologies including .NET, Blazor, Angular, Flutter and SQL Server. I have been working on personal projects to sharpen my skills, and I am eager to continue learning and developing my expertise in this field.
 					</p>
+					<br />
 					<p>
-						Arcu dui vivamus arcu felis bibendum ut tristique et egestas. Eget gravida cum sociis
-						natoque penatibus. Cras fermentum odio eu feugiat pretium nibh. Proin nibh nisl
-						condimentum id venenatis. Porta nibh venenatis cras sed felis eget velit. Id diam vel
-						quam elementum pulvinar etiam non.
-					</p>
-					<p>
-						Ultrices tincidunt arcu non sodales neque sodales ut. Sed enim ut sem viverra aliquet
-						eget sit amet. Lacus luctus accumsan tortor posuere ac ut consequat semper viverra.
-						Viverra accumsan in nisl nisi scelerisque eu ultrices. In massa tempor nec feugiat nisl
-						pretium fusce.
+						I am now seeking opportunities to gain real-world experience and contribute to web development projects. I am a hard worker and a fast learner, and I am committed to delivering high-quality work that meets or exceeds expectations. I am excited about the future of web development and look forward to contributing to this dynamic and growing industry.
 					</p>
 				</div>
 			</section>
 			<section>
 				<h2 class="section-title">Education</h2>
 				<div class="content">
-					<p>Corporis voluptates tenetur laudantium.</p>
+					<p>
+						I am currently pursuing a Bachelor's degree in Computer Science and Engineering, with a focus on web development, from R.M.K. Engineering College, Tamil Nadu, India. Throughout my academic journey, I have taken courses in a wide range of topics, from software engineering to algorithms and data structures. I am also actively involved in extracurricular activities, such as hackathons and coding competitions, to further refine my skills and stay up-to-date on emerging trends.
+					</p>
 				</div>
 			</section>
 			<section>
 				<h2 class="section-title">Skills</h2>
 				<div class="content">
-					<p>officia unde omnis</p>
+					<p>
+						My proficiency in .NET, Blazor, Angular, Flutter and SQL Server is complemented by a strong foundation in front-end and back-end development, including HTML, CSS, JavaScript, TypeScript and SQL. I am skilled in developing responsive layouts and user interfaces, as well as implementing back-end functionalities such as RESTful APIs and databases. Additionally, I possess strong problem-solving skills and an analytical mindset, allowing me to tackle complex challenges and deliver high-quality solutions.
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Resume</h2>
+				<div class="content">
+					<p>
+						You can download my resume in PDF format by clicking the button below.
+					</p>
+					<br />
+					<div class="download-resume">
+						<CallToAction href="/Sathiyaraman's Resume.pdf" target="_blank">Download Resume</CallToAction>
+					</div>
 				</div>
 			</section>
 		</main>
@@ -115,6 +122,24 @@ import Hero from '../components/Hero.astro';
 		section {
 			display: contents;
 			font-size: var(--text-lg);
+		}
+	}
+
+	.download-resume {
+		display: flex;
+		width: 50%;
+		justify-content: start;
+		align-items: center;
+		text-decoration: none;
+	}
+
+	.download-resume :global(a) {
+		text-decoration: none;
+	}
+
+	@media (max-width: 50em) {
+		.download-resume {
+			width: 100%;
 		}
 	}
 </style>
