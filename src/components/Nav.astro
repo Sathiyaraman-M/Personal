@@ -3,17 +3,18 @@ import Icon, { Props as IconProps } from './Icon.astro';
 import ThemeToggle from './ThemeToggle.astro';
 
 /** Main menu items */
-const textLinks: { label: string; href: string }[] = [
-	{ label: 'Home', href: '/' },
-	{ label: 'Projects', href: '/projects/' },
-	{ label: 'Expertise', href: '/expertise/' },
-	{ label: 'About', href: '/about/' },
+const textLinks: { label: string; href: string, target: string }[] = [
+	{ label: 'Home', href: '/', target: '_self' },
+	{ label: 'Projects', href: '/projects/', target: '_self' },
+	{ label: 'Expertise', href: '/expertise/', target: '_self' },
+	{ label: 'Blogs', href: 'https://blogs.sathiyaraman-m.com/', target: '_blank' },
+	{ label: 'About', href: '/about/', target: '_self' },
 ];
 
 /** Icon links to social media — edit these with links to your profiles! */
 const iconLinks: { label: string; href: string; icon: IconProps['icon'] }[] = [
 	{ label: 'Twitter', href: 'https://twitter.com/SathiyaramanM', icon: 'twitter-logo' },
-	{ label: 'GitHub', href: 'https://github.com/SathiyaramanM', icon: 'github-logo' },
+	{ label: 'GitHub', href: 'https://github.com/Sathiyaraman-M', icon: 'github-logo' },
 	{ label: 'YouTube', href: 'https://linkedin.com/in/sathiyaraman-m', icon: 'linkedin-logo' },
 	{ label: 'YouTube', href: 'https://www.youtube.com/@sathiyaraman-m', icon: 'youtube-logo' },
 ];
@@ -22,7 +23,8 @@ const iconLinks: { label: string; href: string; icon: IconProps['icon'] }[] = [
 <nav>
 	<div class="menu-header">
 		<a href="/" class="site-title">
-			<Icon icon="terminal-window" color="var(--accent-regular)" size="1.6em" gradient />
+			<!-- <Icon icon="terminal-window" color="var(--accent-regular)" size="1.6em" gradient /> -->
+			🧭
 			Sathiyaraman M
 		</a>
 		<menu-button>
@@ -37,7 +39,7 @@ const iconLinks: { label: string; href: string; icon: IconProps['icon'] }[] = [
 	<div id="menu-content">
 		<ul class="nav-items">
 			{
-				textLinks.map(({ label, href }) => (
+				textLinks.map(({ label, href, target }) => (
 					<li>
 						<a
 							aria-current={Astro.url.pathname === href}
@@ -49,7 +51,7 @@ const iconLinks: { label: string; href: string; icon: IconProps['icon'] }[] = [
 										(href !== '/' && Astro.url.pathname.startsWith(href)),
 								},
 							]}
-							href={href}
+							href={href} target={target}
 						>
 							{label}
 						</a>
