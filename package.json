@@ -10,6 +10,8 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrolib/analytics": "^0.3.0",
+    "@astrolib/seo": "^0.3.0",
     "astro": "^2.3.2"
   }
 }
