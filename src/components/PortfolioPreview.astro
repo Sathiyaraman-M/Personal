@@ -5,11 +5,11 @@ interface Props {
 	project: CollectionEntry<'projects'>;
 }
 
-const { data, slug } = Astro.props.project;
+const { data, id } = Astro.props.project;
 ---
 
 <div class="tooltip-container">
-	<a class="card" href={`/projects/${slug}`}>
+	<a class="card" href={`/projects/${id}`}>
 			<div class="title">
 			{data.title}
 		</div>

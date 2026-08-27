@@ -6,13 +6,36 @@ import Hero from "../components/Hero.astro";
 
 ---
 
-<BaseLayout title="Expertise | Sathiyaraman M">
+<BaseLayout
+	title="Expertise | Sathiyaraman M"
+	description="Sathiyaraman M's primary expertise includes .NET, C#, JVM technologies, TypeScript, Node.js, React, and platform engineering."
+>
     <div class="stack gap-20">
         <main class="wrapper stack gap-8">
             <!-- <Hero title="Skills" /> -->
-            <Hero title=" Expertise" tagline="See my skills and tools I use, to understand my area of expertise." />
+            <Hero title="Expertise" tagline="Technologies and practices I use across solution consulting, platform engineering, and software development." />
             <!-- <img class="hero-image" src="/assets/stock-2.jpg" /> -->
         </main>
+        <section class="section primary-expertise">
+            <header class="section-header stack gap-2">
+                <h3 style="text-align: center;">Primary Expertise</h3>
+                <p>My current work combines strong .NET expertise with JVM-based platform engineering and TypeScript application development.</p>
+            </header>
+            <Grid variant="small">
+                <li class="expertise-card">
+                    <h4>.NET &amp; C#</h4>
+                    <p>.NET, C#, ASP.NET Core, Blazor, APIs, and SQL Server.</p>
+                </li>
+                <li class="expertise-card">
+                    <h4>JVM &amp; Platforms</h4>
+                    <p>JVM-based application development, platform engineering, and reliable delivery systems.</p>
+                </li>
+                <li class="expertise-card">
+                    <h4>TypeScript &amp; Web</h4>
+                    <p>TypeScript-first development with Node.js, React, APIs, and modern web applications.</p>
+                </li>
+            </Grid>
+        </section>
         <section class="section">
             <header class="section-header stack gap-2">
                 <h3 style="text-align: center;">Languages I have used</h3>
@@ -62,7 +85,7 @@ import Hero from "../components/Hero.astro";
         </section>
         <section class="section">
             <header class="section-header stack gap-2">
-                <h3 style="text-align: center;">Frameworks I have worked</h3>
+                <h3 style="text-align: center;">Frameworks I have worked with</h3>
             </header>
             <Grid variant="small">
                 <li class="skill-card tooltip-container">
@@ -161,7 +184,7 @@ import Hero from "../components/Hero.astro";
                 </li>
                 <li class="skill-card tooltip-container">
                     <img src="/assets/expertise/docker.png" />
-                    <div class="tooltip">Dockers</div>
+                    <div class="tooltip">Docker</div>
                 </li>
                 <li class="skill-card tooltip-container">
                     <img src="/assets/expertise/firebase.png" />
@@ -248,6 +271,33 @@ import Hero from "../components/Hero.astro";
 
 	.section-header h3 {
 		font-size: var(--text-2xl);
+	}
+
+	.primary-expertise .section-header p {
+		margin-top: 0.5rem;
+		color: var(--gray-300);
+	}
+
+	.expertise-card {
+		display: flex;
+		min-height: 9.5rem;
+		flex-direction: column;
+		justify-content: center;
+		gap: 0.75rem;
+		padding: 1.5rem;
+		border: 1px solid var(--gray-800);
+		border-radius: 1.5rem;
+		background: var(--gray-999_40);
+		box-shadow: var(--shadow-sm);
+	}
+
+	.expertise-card h4 {
+		font-size: var(--text-lg);
+		color: var(--gray-0);
+	}
+
+	.expertise-card p {
+		color: var(--gray-300);
 	}
 
     .skill-card {
