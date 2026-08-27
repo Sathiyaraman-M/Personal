@@ -15,48 +15,29 @@ const { href, target } = Astro.props;
 		display: flex;
 		place-content: center;
 		text-align: center;
-		padding: 0.56em 2em;
+		padding: 0.75rem 1rem;
 		gap: 0.8em;
-		color: var(--accent-text-over);
+		color: var(--accent-text);
 		text-decoration: none;
 		line-height: 1.1;
-		border-radius: 999rem;
-		overflow: hidden;
-		background: var(--gradient-accent-orange);
-		box-shadow: var(--shadow-md);
-		transition: scale var(--theme-transition);
+		border: 1px solid var(--accent);
+		border-radius: 2px;
+		background: var(--accent);
+		transition: background-color var(--theme-transition), transform var(--theme-transition);
 		white-space: nowrap;
 	}
 
 	a:active {
-		scale: 0.95;
+		transform: translateY(2px);
 	}
 
 	@media (min-width: 20em) {
-		a {
-			font-size: var(--text-lg);
-		}
+			a { font-size: var(--text-base); }
 	}
 
-	/* Overlay for hover effects. */
-	a::after {
-		content: '';
-		position: absolute;
-		inset: 0;
-		pointer-events: none;
-		transition: background-color var(--theme-transition);
-		mix-blend-mode: overlay;
-	}
-
-	a:focus::after,
-	a:hover::after {
-		background-color: hsla(var(--gray-999-basis), 0.3);
-	}
+	a:hover, a:focus { background: var(--accent-strong); }
 
 	@media (min-width: 50em) {
-		a {
-			padding: 1.125rem 2.5rem;
-			font-size: var(--text-xl);
-		}
+		a { padding: 0.875rem 1.25rem; font-size: var(--text-base); }
 	}
 </style>
