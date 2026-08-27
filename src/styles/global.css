@@ -33,7 +33,7 @@
     --font-mono:
         "IBM Plex Mono", "SFMono-Regular", Consolas, "Liberation Mono",
         monospace;
-    --font-body: var(--font-system);
+    --font-body: var(--font-mono);
     --font-brand: var(--font-system);
     --theme-transition: 180ms ease;
 }
@@ -68,6 +68,8 @@ body {
     font-family: var(--font-body);
     -webkit-font-smoothing: antialiased;
     line-height: 1.6;
+    font-size: 0.9375rem;
+    letter-spacing: -0.015em;
 }
 *,
 *::after,
@@ -107,6 +109,13 @@ h5 {
     font-family: var(--font-brand);
     font-weight: 650;
     color: var(--ink);
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
 }
 h1 {
     font-size: var(--text-3xl);
