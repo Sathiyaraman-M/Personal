@@ -342,6 +342,12 @@ import Icon from "../components/Icon.astro";
         padding: var(--space-6);
         background: var(--surface);
     }
+    .projects article:first-child {
+        padding-left: 0;
+    }
+    .projects article:last-child {
+        padding-right: 0;
+    }
     .project-meta {
         display: flex;
         justify-content: space-between;
@@ -418,7 +424,7 @@ import Icon from "../components/Icon.astro";
             align-content: center;
         }
         .projects {
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: minmax(0, 0.92fr) minmax(0, 1fr) minmax(0, 0.92fr);
         }
         .closing-note {
             grid-template-columns: 1fr auto;
