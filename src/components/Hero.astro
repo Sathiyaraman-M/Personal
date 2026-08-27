@@ -29,6 +29,11 @@ const { align = 'center', tagline, title } = Astro.props;
 		margin-inline: auto;
 	}
 
+	.tagline {
+		font-size: var(--text-md);
+		line-height: 1.55;
+	}
+
 	.title {
 		font-size: clamp(2.75rem, 8vw, 6.5rem);
 		font-weight: 300;
