@@ -38,23 +38,24 @@ import Icon from "../components/Icon.astro";
             <section class="content-section intro reveal" id="about">
                 <div class="section-label">01 / About</div>
                 <h2>
-                    I like understanding the whole problem before writing the
-                    first line of code.
+                    I started by copying tutorials. Then I started asking what
+                    the code could do for someone.
                 </h2>
                 <div class="intro-copy">
                     <p>
-                        My work sits between people, systems, and code. I help
-                        turn unclear problems into practical technical
-                        direction, then stay close enough to the implementation
-                        to make sure the solution works in the real world.
+                        Back in school, I spent time following random C#
+                        tutorials in Visual Studio, trying to reproduce what I
+                        saw on screen. It was simple, sometimes messy, and
+                        completely absorbing. Those small acts of replication
+                        were my first experience of the joy of building
+                        something with code.
                     </p>
                     <p>
-                        I bring a strong .NET and C# foundation from years of
-                        building software, along with current experience in the
-                        JVM ecosystem, TypeScript, Node.js, React, and platform
-                        engineering. The technology matters, but choosing what
-                        is useful, understandable, and maintainable matters
-                        more.
+                        Over time, I became more interested in programming itself:
+                        how to turn an abstract idea into something useful for
+                        a real person, and how to do that with a little more
+                        elegance each time. That is still the thread connecting
+                        the work I do today.
                     </p>
                 </div>
             </section>
@@ -79,10 +80,10 @@ import Icon from "../components/Icon.astro";
                         <div>
                             <h3>A .NET foundation</h3>
                             <p>
-                                My early years in software were shaped by .NET,
-                                C#, ASP.NET Core, Blazor, and SQL Server. That
-                                foundation is still a core part of how I think
-                                and build.
+                                I began with .NET, learning how to turn a blank
+                                project into something that actually worked.
+                                That early habit of building is still part of
+                                how I approach a new problem.
                             </p>
                         </div>
                     </li>
@@ -114,10 +115,12 @@ import Icon from "../components/Icon.astro";
                         <div>
                             <h3>What I’m focused on now</h3>
                             <p>
-                                Today, I work mostly with JVM technologies and
-                                the TypeScript ecosystem, including Node.js and
-                                React, while continuing to bring my .NET
-                                experience to the problems I solve.
+                                These days, the interesting problems tend to
+                                pull me toward JVM and TypeScript codebases,
+                                especially Node.js and React. I’m learning the
+                                trade-offs in those ecosystems while bringing
+                                along the .NET instincts that still shape how I
+                                design and debug.
                             </p>
                         </div>
                     </li>
@@ -133,31 +136,27 @@ import Icon from "../components/Icon.astro";
                 <h2
                     id="perspective-title"
                 >
-                    Clear thinking, useful technology, and enough curiosity to
-                    keep learning.
+                    A few wild experiments, built from tools I already know.
                 </h2>
-                <div class="principles">
-                    <div>
-                        <h3>Start with the problem</h3>
-                        <p>
-                            Good solutions begin with listening carefully and
-                            understanding what success actually means.
-                        </p>
-                    </div>
-                    <div>
-                        <h3>Keep the system understandable</h3>
-                        <p>
-                            Complexity is sometimes necessary, but it should
-                            never be the default or the selling point.
-                        </p>
-                    </div>
-                    <div>
-                        <h3>Stay close to the work</h3>
-                        <p>
-                            I enjoy the conversation around architecture just as
-                            much as the craft of implementing it.
-                        </p>
-                    </div>
+                <div class="projects">
+                    <article>
+                        <div class="project-meta"><span>01</span><span>Still in progress</span></div>
+                        <h3>Tree-sitter grammar for Razor</h3>
+                        <p>Writing a Razor grammar has been a hands-on lesson in how much there is to learn about parsing—and how patient a tool can ask you to be.</p>
+                        <a class="text-link" href="https://github.com/Sathiyaraman-M/tree-sitter-razor" target="_blank">View on GitHub <Icon icon="arrow-up-right" size="1em" /></a>
+                    </article>
+                    <article>
+                        <div class="project-meta"><span>02</span><span>Proof of concept</span></div>
+                        <h3>Native AppKit with Blazor</h3>
+                        <p>I’m exploring a framework for building native macOS AppKit screens with C# and Blazor. Layout is currently winning most of the arguments, so I’m working through that next.</p>
+                        <a class="text-link" href="https://github.com/Sathiyaraman-M/BlazorAppKit" target="_blank">View on GitHub <Icon icon="arrow-up-right" size="1em" /></a>
+                    </article>
+                    <article>
+                        <div class="project-meta"><span>03</span><span>Built in C#</span></div>
+                        <h3>An OpenFGA Kubernetes Operator</h3>
+                        <p>At work, I started by managing OpenFGA resources manually in GitHub Actions, then moved to the official Terraform provider to automate much of it. My interest in Kubernetes and OpenFGA eventually turned that experience into this small experiment: an operator for managing stores, models, and tuples.</p>
+                        <a class="text-link" href="https://github.com/Sathiyaraman-M/OpenFGA-Operator" target="_blank">View on GitHub <Icon icon="arrow-up-right" size="1em" /></a>
+                    </article>
                 </div>
             </section>
 
@@ -252,7 +251,7 @@ import Icon from "../components/Icon.astro";
     }
     .content-section {
         width: 100%;
-        max-width: 52rem;
+        max-width: 60rem;
         margin-inline: auto;
     }
     .section-label {
@@ -282,9 +281,6 @@ import Icon from "../components/Icon.astro";
         gap: var(--space-6);
         margin-top: var(--space-8);
         font-size: var(--text-md);
-    }
-    .timeline-section {
-        max-width: 60rem;
     }
     .section-heading {
         margin-bottom: var(--space-12);
@@ -324,27 +320,49 @@ import Icon from "../components/Icon.astro";
         font-size: 0.75rem;
     }
     .timeline h3,
-    .principles h3 {
+    .projects h3 {
         margin-bottom: var(--space-2);
         font-size: var(--text-lg);
     }
     .timeline p,
-    .principles p {
+    .projects p {
         max-width: 55ch;
     }
     .perspective {
-        max-width: 60rem;
         padding-block: var(--space-8);
-        border-block: 1px solid var(--rule);
     }
-    .principles {
+    .projects {
         display: grid;
-        gap: var(--space-8);
+        gap: 1px;
         margin-top: var(--space-12);
+        background: var(--rule);
     }
-    .principles > div {
-        padding-top: var(--space-4);
-        border-top: 2px solid var(--accent);
+    .projects article {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-4);
+        padding: var(--space-6);
+        background: var(--surface);
+    }
+    .project-meta {
+        display: flex;
+        justify-content: space-between;
+        gap: var(--space-4);
+        color: var(--accent);
+        font-family: var(--font-mono);
+        font-size: 0.7rem;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+    }
+    .projects h3 {
+        font-size: var(--text-lg);
+    }
+    .projects p {
+        max-width: 48ch;
+    }
+    .projects .text-link {
+        width: fit-content;
+        margin-top: auto;
     }
     .closing-note {
         display: grid;
@@ -378,6 +396,8 @@ import Icon from "../components/Icon.astro";
         .hero-section {
             grid-template-columns: minmax(0, 1fr) 24rem;
             gap: var(--space-16);
+            min-height: calc(100svh - 3.5rem - var(--space-24));
+            align-content: center;
         }
         .hero-image {
             aspect-ratio: 4 / 5;
@@ -389,9 +409,18 @@ import Icon from "../components/Icon.astro";
         .content-section h2 {
             font-size: clamp(2.5rem, 5vw, 4rem);
         }
-        .principles {
+        .content-section {
+            display: flex;
+            flex-direction: column;
+            min-height: calc(100svh - 3.5rem - var(--space-12));
+            justify-content: center;
+        }
+        .closing-note {
+            display: grid;
+            align-content: center;
+        }
+        .projects {
             grid-template-columns: repeat(3, 1fr);
-            gap: var(--space-8);
         }
         .closing-note {
             grid-template-columns: 1fr auto;

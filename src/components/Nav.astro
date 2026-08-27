@@ -2,14 +2,6 @@
 import Icon, { Props as IconProps } from './Icon.astro';
 import ThemeToggle from './ThemeToggle.astro';
 
-const sectionLinks = [
-	{ label: 'Home', href: '#home' },
-	{ label: 'About', href: '#about' },
-	{ label: 'Journey', href: '#journey' },
-	{ label: 'Approach', href: '#approach' },
-	{ label: 'Contact', href: '#contact' },
-];
-
 const iconLinks: { label: string; href: string; icon: IconProps['icon'] }[] = [
 	{ label: 'Twitter', href: 'https://twitter.com/SathiyaramanM', icon: 'twitter-logo' },
 	{ label: 'GitHub', href: 'https://github.com/Sathiyaraman-M', icon: 'github-logo' },
@@ -24,15 +16,12 @@ const iconLinks: { label: string; href: string; icon: IconProps['icon'] }[] = [
 		<menu-button>
 			<template><button class="menu-button" aria-expanded="false"><span class="sr-only">Menu</span><Icon icon="list" /></button></template>
 		</menu-button>
-	</div>
-	<div id="menu-content">
-		<ul class="nav-items">
-			{sectionLinks.map(({ label, href }) => <li><a class="link" href={href}>{label}</a></li>)}
-		</ul>
-		<div class="menu-footer">
-			<div class="utility-links"><a href="/Sathiyaraman M's Resume.pdf" target="_blank">Resume</a><a href="https://blogs.sathiyaraman-m.com/" target="_blank">Writing</a></div>
-			<div class="socials">{iconLinks.map(({ href, icon, label }) => <a href={href} class="social"><span class="sr-only">{label}</span><Icon icon={icon} /></a>)}</div>
-			<ThemeToggle />
+		<div id="menu-content">
+			<div class="menu-footer">
+				<div class="utility-links"><a href="/Sathiyaraman M's Resume.pdf" target="_blank">Resume</a><a href="https://blogs.sathiyaraman-m.com/" target="_blank">Writing</a></div>
+				<div class="socials">{iconLinks.map(({ href, icon, label }) => <a href={href} class="social"><span class="sr-only">{label}</span><Icon icon={icon} /></a>)}</div>
+				<ThemeToggle />
+			</div>
 		</div>
 	</div>
 </nav>
@@ -56,26 +45,17 @@ const iconLinks: { label: string; href: string; icon: IconProps['icon'] }[] = [
 	}
 	customElements.define('menu-button', MenuButton);
 
-	const links = [...document.querySelectorAll<HTMLAnchorElement>('.link')];
-	const sections = links.map((link) => document.querySelector(link.hash)).filter(Boolean) as Element[];
-	const observer = new IntersectionObserver((entries) => {
-		entries.forEach((entry) => { if (entry.isIntersecting) links.forEach((link) => link.classList.toggle('active', link.hash === `#${entry.target.id}`)); });
-	}, { rootMargin: '-35% 0px -55% 0px' });
-	sections.forEach((section) => observer.observe(section));
 </script>
 
 <style>
 	nav { position: sticky; top: 0; z-index: 10; border-bottom: 1px solid var(--rule); background: color-mix(in srgb, var(--surface) 94%, transparent); backdrop-filter: blur(12px); }
-	.menu-header, #menu-content { width: min(100% - 2rem, 72rem); margin-inline: auto; }
-	.menu-header { display: flex; align-items: center; justify-content: space-between; min-height: 4.5rem; }
+	.menu-header { width: min(100% - 2rem, 72rem); margin-inline: auto; }
+	.menu-header { display: flex; align-items: center; justify-content: space-between; min-height: 3.5rem; }
 	.site-title { color: var(--ink); text-decoration: none; font-weight: 700; letter-spacing: -0.03em; }
 	.compass { margin-right: var(--space-2); }
 	.menu-button { display: flex; padding: var(--space-2); border: 1px solid var(--rule); border-radius: 2px; color: var(--ink); background: var(--surface-raised); }
-	#menu-content { padding-bottom: var(--space-4); }
-	.nav-items { display: flex; flex-direction: column; gap: var(--space-2); padding: var(--space-4) 0; margin: 0; list-style: none; border-top: 1px solid var(--rule); }
-	.link, .utility-links a { color: var(--ink-muted); text-decoration: none; }
-	.link { display: block; padding: var(--space-2) 0; font-family: var(--font-mono); font-size: var(--text-sm); }
-	.link:hover, .link:focus, .link.active { color: var(--accent); }
+	#menu-content { flex-basis: 100%; padding-bottom: var(--space-4); }
+	.utility-links a { color: var(--ink-muted); text-decoration: none; }
 	.menu-footer { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-4); }
 	.utility-links, .socials { display: flex; align-items: center; gap: var(--space-4); }
 	.utility-links a { font-family: var(--font-mono); font-size: 0.75rem; text-transform: uppercase; }
@@ -83,16 +63,11 @@ const iconLinks: { label: string; href: string; icon: IconProps['icon'] }[] = [
 	.social { display: flex; color: var(--ink-faint); }
 
 	@media (min-width: 50em) {
-		nav { min-height: 4.5rem; }
-		.menu-header, #menu-content { width: min(100% - 5rem, 72rem); }
-		.menu-header { min-height: 4.5rem; }
-		#menu-content { display: flex; align-items: center; justify-content: space-between; gap: var(--space-8); padding: 0; }
-		.nav-items { flex-direction: row; gap: var(--space-6); padding: 0; border: 0; }
-		.link { position: relative; padding: var(--space-3) 0; }
-		.link::after { content: ''; position: absolute; right: 0; bottom: 0; left: 0; height: 2px; background: var(--accent); transform: scaleX(0); transform-origin: right; transition: transform var(--theme-transition); }
-		.link:hover::after, .link:focus::after, .link.active::after { transform: scaleX(1); transform-origin: left; }
+		nav { min-height: 3.5rem; }
+		.menu-header { width: min(100% - 5rem, 72rem); }
+		.menu-header { min-height: 3.5rem; }
+		#menu-content { flex-basis: auto; padding: 0; }
 		.menu-footer { margin-left: auto; }
 		.menu-button { display: none; }
 	}
-	@media (prefers-reduced-motion: reduce) { .link::after { transition: none; } }
 </style>
