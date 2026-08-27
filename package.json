@@ -2,6 +2,9 @@
   "name": "personal",
   "type": "module",
   "version": "0.0.1",
+  "engines": {
+    "node": ">=22.12.0"
+  },
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -10,8 +13,6 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrolib/analytics": "^0.3.0",
-    "@astrolib/seo": "^0.3.0",
-    "astro": "^2.3.2"
+    "astro": "^7.2.8"
   }
 }
