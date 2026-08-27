@@ -1,5 +1,6 @@
 ---
-import Icon, { Props as IconProps } from './Icon.astro';
+import Icon from './Icon.astro';
+import type{ Props as IconProps } from './Icon.astro';
 import ThemeToggle from './ThemeToggle.astro';
 
 const iconLinks: { label: string; href: string; icon: IconProps['icon'] }[] = [
@@ -35,7 +36,7 @@ const iconLinks: { label: string; href: string; icon: IconProps['icon'] }[] = [
 			const menu = document.getElementById('menu-content')!;
 			menu.hidden = true;
 			const setExpanded = (expand: boolean) => { btn.setAttribute('aria-expanded', String(expand)); menu.hidden = !expand; };
-			btn.addEventListener('click', () => setExpanded(menu.hidden));
+			btn.addEventListener('click', () => setExpanded(menu.hidden === true));
 			menu.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => setExpanded(false)));
 			const mediaQueries = window.matchMedia('(min-width: 50em)');
 			const handleViewports = (e: MediaQueryList | MediaQueryListEvent) => { setExpanded(e.matches); btn.hidden = e.matches; };
