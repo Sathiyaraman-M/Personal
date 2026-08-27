@@ -49,14 +49,15 @@ const iconLinks: { label: string; href: string; icon: IconProps['icon'] }[] = [
 
 <style>
 	nav { position: sticky; top: 0; z-index: 10; border-bottom: 1px solid var(--rule); background: color-mix(in srgb, var(--surface) 94%, transparent); backdrop-filter: blur(12px); }
-	.menu-header { width: min(100% - 2rem, 72rem); margin-inline: auto; }
+	.menu-header { position: relative; width: min(100% - 2rem, 72rem); margin-inline: auto; }
 	.menu-header { display: flex; align-items: center; justify-content: space-between; min-height: 3.5rem; }
 	.site-title { color: var(--ink); text-decoration: none; font-family: var(--font-mono); font-size: 0.875rem; font-weight: 600; letter-spacing: -0.02em; text-transform: uppercase; }
 	.compass { margin-right: var(--space-2); }
 	.menu-button { display: flex; padding: var(--space-2); border: 1px solid var(--rule); border-radius: 2px; color: var(--ink); background: var(--surface-raised); }
-	#menu-content { flex-basis: 100%; padding-bottom: var(--space-4); }
+	#menu-content { position: absolute; top: calc(100% + 0.75rem); right: 0; width: min(20rem, calc(100vw - 2rem)); padding: var(--space-4); border: 1px solid var(--rule); border-radius: 4px; background: var(--surface-raised); box-shadow: 0 1rem 2rem color-mix(in srgb, #000 24%, transparent); }
 	.utility-links a { color: var(--ink-muted); text-decoration: none; }
 	.menu-footer { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-4); }
+	.menu-footer > theme-toggle { margin-left: auto; }
 	.utility-links, .socials { display: flex; align-items: center; gap: var(--space-4); }
 	.utility-links a { font-family: var(--font-mono); font-size: 0.75rem; text-transform: uppercase; }
 	.utility-links a:hover, .utility-links a:focus, .social:hover, .social:focus { color: var(--accent); }
@@ -65,8 +66,10 @@ const iconLinks: { label: string; href: string; icon: IconProps['icon'] }[] = [
 	@media (min-width: 50em) {
 		nav { min-height: 3.5rem; }
 		.menu-header { width: min(100% - 5rem, 72rem); }
+		.menu-header { position: static; }
 		.menu-header { min-height: 3.5rem; }
-		#menu-content { flex-basis: auto; padding: 0; }
+		#menu-content { position: static; width: auto; padding: 0; border: 0; border-radius: 0; background: transparent; box-shadow: none; }
+		.menu-footer > theme-toggle { margin-left: 0; }
 		.menu-footer { margin-left: auto; }
 		.menu-button { display: none; }
 	}
